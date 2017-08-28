@@ -10,13 +10,13 @@
     - Lastname
     - Contact Number
     - Email
-    - Are you bringing someone?
     - Dietary Requirements with the following options:
       - Gluten Free
       - Halaal
       - Kosher
       - Vegan
       - Other
+    - Are you bringing someone?
 
 . Create a confirmation page showing the following:
 
