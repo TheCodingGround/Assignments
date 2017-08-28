@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            var queryString = location.search.slice(1);
+            var splittedQuerystring = queryString.split("&");
+            
+            var name = splittedQuerystring[0].split("=")[1];
+            var lastname = splittedQuerystring[1].split("=")[1];
+            var guests = splittedQuerystring[6].split("=")[1];
+
+
+            $('#message').text("Thank you for submitting " + name + " " + lastname + "Thank you for bringing " + guests + " guests.");
+        });
+    </script>
+</head>
+<body>
+    <div id="message">Blah</div>
+</body>
+</html>

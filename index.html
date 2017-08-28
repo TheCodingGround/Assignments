@@ -7,24 +7,34 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>RSVP Form</title>
   <style>
-      .showOther {
-          display: inline;
-      }
-      .hideOther{
-          display: none;
-      }
-      
+    body {
+      font-size: 20px;
+    }
+
+    .showOther {
+      display: inline;
+    }
+
+    .hideOther {
+      display: none;
+    }
+
+    div {
+      padding-bottom: 0.5em;
+    }
+
   </style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
 
   <script>
-      function otherDietaryRequired(){
-          if ($('#dietary').val() == "other"){
-              $('#other-dietary-div').show();
-          }else{
-              $('#other-dietary-div').hide();
-          }
+    function otherDietaryRequired() {
+      if ($('#dietary').val() == "other") {
+        $('#other-dietary-div').show();
+      } else {
+        $('#other-dietary-div').hide();
       }
+    }
 
     // normal javascript
     // function otherDietaryRequired() {
@@ -44,37 +54,42 @@
 </head>
 
 <body>
-  <form action="">
+  <div style="width:30%; text-align:left;position:relative;">
+    <form action="confirmation_page.html">
+      <div>
+        <label for="firstname">Name</label>
+        <input type="text" id="firstname" name="firstname" />
+      </div>
 
-    <div>
-      <label for="firstname">Name</label>
-      <input type="text" id="firstname" name="firstname" />
-    </div>
+      <div>
+        <label for="lastname">Lastname</label>
+        <input type="text" id="lastname" name="lastname" />
+      </div>
 
-    <div>
-      <label for="lastname">Lastname</label>
-      <input type="text" id="lastname" name="lastname" />
-    </div>
+      <div>
 
-    <div>
+        <label for="contact-no">Contact Number</label>
+        <input type="tel" id="contactno" name="contactno" />
+      </div>
 
-      <label for="contact-no">Contact Number</label>
-      <input type="tel" id="contactno" name="contactno" />
-    </div>
+      <div>
+        <label for="firstname">Name</label>
+        <input type="text" id="firstname" name="firstname" />
+      </div>
 
-    <div>
-      <label for="firstname">Name</label>
-      <input type="text" id="firstname" name="firstname" />
-    </div>
+      <div>
+        <label for="address">Address</label>
+        <textarea id="address" name="address" ></textarea>
+      </div>
 
-    <div>
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" />
-    </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" />
+      </div>
 
-    <div>
-      <label for="">Dietary requirements</label>
-      <select id="dietary" onchange="otherDietaryRequired()">
+      <div>
+        <label for="">Dietary requirements</label>
+        <select id="dietary" onchange="otherDietaryRequired()">
             <option value="none" selected>None</option>
             <option value="gluten-free">Gluten Free</option>
             <option value="halaal">Halaal</option>
@@ -82,25 +97,27 @@
             <option value="kosher">Kosher</option>
             <option value="other">Other</option>
         </select>
-    </div>
+      </div>
 
-    <div id="other-dietary-div" hidden>
-      <label for="other-dietary">Other dietary requirements</label>
-      <input type="text" id="other-dietary" name="other-dietary" />
-    </div>
+      <div id="other-dietary-div" hidden>
+        <label for="other-dietary">Other dietary requirements</label>
+        <input type="text" id="other-dietary" name="other-dietary" />
+      </div>
 
-    <div>
-      <label for="bringing-someone">How many friends are you bringing?</label>
-      <select name="how-many" id="how-many">
+      <div>
+        <label for="bringing-someone">How many friends are you bringing?</label>
+        <select name="how-many" id="how-many">
             <option value="0" selected>0</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
         </select>
-    </div>
-
-  </form>
+      </div>
+      <input type="submit" value="Rsvp" />
+    </form>
+  </div>
 </body>
 
 </html>
+
