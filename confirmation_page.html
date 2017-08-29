@@ -24,7 +24,11 @@
             var contactno = splittedQuerystring[2].split("=")[1];
             var email = splittedQuerystring[3].split("=")[1];
             var dietary = splittedQuerystring[4].split("=")[1];
-            var dietaryOther = splittedQuerystring[5].split("=")[1];
+            if (dietary == "other"){
+                var dietaryOther = splittedQuerystring[5].split("=")[1];
+                dietary = dietaryOther;
+            }
+            
             var guests = splittedQuerystring[6].split("=")[1];
 
             $('#message').text(`Thank you, ${name} ${lastname}, for rsvping.`);
