@@ -27,3 +27,6 @@
 
 * Use jQuery where possible
 * Use Html forms and querystrings
+
+## Bonus Points
+* Use a for loop so that you can add fields on the rsvp without having to add extra code in the confirmation page, as well as being able to change the order of the items in the rsvp form without having to change the indexes in the confirmation page.
