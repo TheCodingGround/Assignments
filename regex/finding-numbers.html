@@ -1,0 +1,40 @@
+<DOCTYPE! HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>finding a number</title>
+<script async src="//jsfiddle.net/m1931n1z/3/embed/"></script>
+<script>
+ function hasNumber(value){
+  return value.match(/\d/) != null;
+}
+
+function checkWinner(){
+  
+  var sentence = "Theo won the lotto";
+  var currentName = document.getElementById('name').value;
+  
+  if (hasNumber(currentName)){
+    console.log("Numbers are not allowed.");
+    return;
+  }
+
+
+  var winnerCheckRegex = new RegExp(currentName);
+  if (sentence.match(winnerCheckRegex) != null){
+     console.log(currentName + " won");
+  }
+  else {
+     console.log(currentName + " lost");
+  }
+}
+</script>
+</head>
+<body>
+<input type="text" id="name" name="name" value=""/>
+
+<button type="button" onclick="checkWinner()">Check Winner</button>
+
+<input type="button" onclick="checkWinner()" value="Check Winner 2"/>
+</body>
+</html>

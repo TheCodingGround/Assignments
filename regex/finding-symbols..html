@@ -1,0 +1,25 @@
+<DOCTYPE! HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>finding symbols.</title>
+<script async src="//jsfiddle.net/yjfc6s1s/1/embed/"></script>
+<script>
+function checkSentenceType(){
+  var value = document.getElementById("value").value;
+  if (value.match(/\?/)) {
+    console.log("Sentence is a question");
+  }
+  else if (value.match(/\!/)){
+    console.log("Sentence is a strong statement");
+  }
+}
+</script>
+</head>
+<body>
+<input type="text" id="value" />
+<button onclick="checkSentenceType()">
+  Check Sentence
+</button>
+</body>
+<html>

@@ -1,0 +1,24 @@
+<DOCTYPE! HTML>
+<html>
+<meta charset="utf-8">
+<head>
+<title>finding blank spaces</title>
+<script async src="//jsfiddle.net/yjfc6s1s/1/embed/"></script>
+<script>
+function checkForSpace(){
+  var value = document.getElementById("name").value;
+  
+  if (value.match(/\s/)){
+    console.log("has a space");
+  }else{
+  console.log("Does not have a space");
+  }
+}
+</script>
+</head>
+<body>
+<input type="text" id="name" value="hello Sabelo"/>
+
+<input type="button" onclick="checkForSpace()" value="Check for space"/>
+</body>
+</html>
