@@ -6,7 +6,17 @@
   <title> Cipher</title>
   <script>
     function encode(input_text) {
-      console.log(input_text);
+      var output =  input_text;
+
+
+    for(var i = 0; i < input_text.length; i++)
+    {
+      
+      console.log(`char code for ${input_text[i]} is ${input_text.charCodeAt(i)}`);
+
+    }
+    
+      return output; 
     }
 
     var text = "abdcdefghijklmnopqrstuvwxyz";
