@@ -1,0 +1,17 @@
+<DOCTYPE! HTML>
+<html>
+<head>
+<title>Splice example</title>
+<script async src="//jsfiddle.net/v8ahzvdt/2/embed/"></script>
+<script>
+var letters = ["a","b","c","d","e"];
+var splicedLetters = letters.splice(3);
+console.log("spliced from index 1",splicedLetters);
+console.log("letters after spliced from index 1", letters);
+letters.splice(1,1);
+console.log("letters after splice 1,1", letters);
+letters.splice(1,0,"h","g","y");
+console.log("letters after splicing 1 0 'h' 'g' 'y'", letters);
+</script>
+</head>
+</html>
