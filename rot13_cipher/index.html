@@ -6,13 +6,15 @@
   <title> Cipher</title>
   <script>
     function encode(input_text) {
-      var output =  input_text;
-
+      var output = "";
+      var seed = 13;
 
     for(var i = 0; i < input_text.length; i++)
     {
       
-      console.log(`char code for ${input_text[i]} is ${input_text.charCodeAt(i)}`);
+      output = String.fromCharCode(input_text.charCodeAt(i) + seed);
+
+      console.log(`encoded location for ${input_text[i]} is ${output}`);
 
     }
     
