@@ -7,18 +7,18 @@
 <script>
     function range() {
         last = 200;
-        var arr =[];
-        for (var i = 1; i <= last; i++) {
-          //console.log(i);
-          if (i % 3 == 0 ){
-            console.log("coding"+i);
-        }else if (i % 5 == 0){
-            console.log("ground"+i);
-        }
-        
-        }
-        
+        var coding= "Coding";
+        var ground= "Ground";
+        var i = 1;
+        var output = "";
+        while(i<=last){
 
+            output += (i%3===0 ? coding:(i%5===0?ground:i)) + "\n";
+            i++;
+        }
+
+        return output;
+        
     }
     console.log(range());
 </script>
