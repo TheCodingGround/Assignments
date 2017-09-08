@@ -1,0 +1,23 @@
+<DOCTYPE! HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>find a word character example</title>
+<script async src="//jsfiddle.net/yjfc6s1s/1/embed/"></script>
+/*The \w metacharacter is used to find a word character.
+A word character is a character from a-z, A-Z, 0-9, including the _ (underscore) character.*/
+<script>
+function checkMetacharacter() {
+    var str = "Give 100%!"; 
+    var patt1 = /\w/g;
+    var result = str.match(patt1);
+	console.log "has a metacharacter";
+}
+</script>
+<body>
+<input type="text" id="value" />
+<button onclick="checkMetacharacter()">
+  Is Valid Name
+</button>
+</body>
+</html>

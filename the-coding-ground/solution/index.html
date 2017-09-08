@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <meta name="viewport" content="width=1, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> Print Number`</title>
+  <script>
+    function determineMultiples(firstMultiple = 3, secondMultiple = 5, maxNumber = 20) {
+      for (var i = 1; i <= maxNumber; i++) {
+        var output = "";
+        if(i%firstMultiple ===0)
+        {
+          output = "Coding";
+        }
+        if(i%secondMultiple===0) {
+          
+          output += "Ground";
+        }
+        if(i%firstMultiple!=0 && i%secondMultiple !=0){
+        output = i;
+        }
+        
+        console.log(output);
+
+      }
+    }
+
+    this.determineMultiples();
+  </script>
+
+</head>
+
+<body>
+  <div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+<DOCTYPE! HTML>
+<html>
+<head>
+<title>Slice example</title>
+<script async src="//jsfiddle.net/3tdprscf/1/embed/"></script>
+<script>
+//adding element without splice:
+var numbers = [1,2,3,4,5];
+numbers.push(6);
+console.log("Numbers are now:",numbers);
+console.log("removed from 3 onwards", numbers.slice(2,3));
+console.log("numbers after slice: ", numbers);
+//slice gives a new array from x to y, i.e. numbers.slice(0,2) = [1,2] (where numbers are [1,2,3,4,5])
+</script>
+</head>
+</html>

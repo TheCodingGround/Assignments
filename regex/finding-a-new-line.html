@@ -1,0 +1,23 @@
+<DOCTYPE! HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>find a newline character</title>
+<script async src="//jsfiddle.net/m1931n1z/3/embed/"></script>
+<script>
+function checkNewLine() {
+    var str = "Visit W3Schools.\nLearn JavaScript."; 
+    var patt1 = /\n/;
+    var result = str.search(patt1);
+	console.log "has a new line";
+}
+</script>
+<body>
+<input type="text" id="name" name="name" value=""/>
+
+<button type="button" onclick="checkNewLine()">Check New Line</button>
+
+<input type="button" onclick="checkNewLine()" value="Check new line"/>
+</body>
+</body>
+</html>
