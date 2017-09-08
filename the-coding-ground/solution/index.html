@@ -5,29 +5,28 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title> Print Number`</title>
   <script>
-    function printNumbers(maxNumber = 200) {
-
+    function printNumbers(maxNumber = 20) {
+      var firstMultiple = 3;
       for (var i = 1; i <= maxNumber; i++) {
-        if(i%3===0 && i%5===0) {
-          
-          console.log("CodingGround");
-        }
-        else if(i%3===0)
+        var output = "";
+        if(i%firstMultiple ===0)
         {
-          console.log("Coding");
+          output = "Coding";
         }
-        else if(i%5===0) {
+        if(i%5===0) {
           
-          console.log("Ground");
+          output += "Ground";
         }
-        else {
-        console.log(`${i}`);
+        if(i%firstMultiple!=0 && i%5!=0){
+        output = i;
         }
+        
+        console.log(output);
 
       }
     }
 
-    this.printNumbers(500);
+    this.printNumbers();
   </script>
 
 </head>
