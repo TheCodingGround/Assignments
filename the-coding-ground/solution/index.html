@@ -5,8 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title> Print Number`</title>
   <script>
-    function printNumbers() {
-      var maxNumber =  200;
+    function printNumbers(maxNumber = 200) {
 
       for (var i = 1; i <= maxNumber; i++) {
         if(i%3===0 && i%5===0) {
@@ -28,7 +27,7 @@
       }
     }
 
-    this.printNumbers();
+    this.printNumbers(500);
   </script>
 
 </head>
