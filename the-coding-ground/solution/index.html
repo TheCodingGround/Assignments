@@ -5,19 +5,18 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title> Print Number`</title>
   <script>
-    function printNumbers(maxNumber = 20) {
-      var firstMultiple = 3;
+    function determineMultiples(firstMultiple = 3, secondMultiple = 5, maxNumber = 20) {
       for (var i = 1; i <= maxNumber; i++) {
         var output = "";
         if(i%firstMultiple ===0)
         {
           output = "Coding";
         }
-        if(i%5===0) {
+        if(i%secondMultiple===0) {
           
           output += "Ground";
         }
-        if(i%firstMultiple!=0 && i%5!=0){
+        if(i%firstMultiple!=0 && i%secondMultiple !=0){
         output = i;
         }
         
@@ -26,7 +25,7 @@
       }
     }
 
-    this.printNumbers();
+    this.determineMultiples();
   </script>
 
 </head>
