@@ -7,13 +7,12 @@
 <script>
     function range() {
         last = 200;
-        var coding= "Coding";
-        var ground= "Ground";
+        var coding= "Coding",ground= "Ground";
         var i = 1;
         var output = "";
         while(i<=last){
 
-            output += (i%3===0 ? coding:(i%5===0?ground:i)) + "\n";
+            output += (i%3===0 && i%5===0 ? coding + ground:(i%3===0 ? coding:(i%5===0?ground:i))) + "\n";
             i++;
         }
 
