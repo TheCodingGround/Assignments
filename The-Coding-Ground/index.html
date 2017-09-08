@@ -6,17 +6,29 @@
 </head>
 
 <script>
-  var numbers = '';
-  function theNumbers(bala) {
+  function theNumbers(numbr){
 
-    var massage = "this is number";
-    for (var i = 1; i <= bala; i++) {
-      console.log(massage + " " + i);
-      numbers = i;
-    } console.log(numbers);
 
-  }
-  this.theNumbers(200);
+
+for(var i =1; i <=numbr; i++){
+  
+if(i%3===0&&i%5===0){
+  console.log("CodingGround")
+}else if(i%3===0){
+  console.log('coding')
+}
+else if (i%5===0){
+  console.log('Ground')
+}
+
+else{
+console.log(i);
+}
+  }} 
+
+
+
+  this.theNumbers(20);
 
 </script>
 
