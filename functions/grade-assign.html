@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>monday task</title>
+</head>
+<script>
+    var scored = " ";
+    function gradeAssign(score) {
+
+        var A = 80 / 100;
+        var B = 70 / 80;
+        var C = 50 / 65;
+        var D = 30 / 45;
+        var F = 20 / 30;
+        if (score >= A) {
+            scored = " You scored" + " " + score + "symbol " + " " + "A";
+        } else if (score >= B) {
+            scored = " You scored" + " " + score + "symbol" + " " + "B";
+        } else if (score >= C) {
+            scored = " You scored" + " " + score + " symbol" + " " + "C";
+        } else if (score >= D) {
+            scored = " You scored" + " " + score + " symbol" + " " + "D";
+        } else if (score >= F) {
+            scored = " You scored" + score + "F";
+        }
+
+        else { scored = "unfortunaly you scored the lowest dont give up though" + "" + "F" }
+        console.log(scored);
+    }
+
+
+
+
+    this.gradeAssign(35);
+</script>
+
+<body>
+
+
+
+</body>
+
+</html>

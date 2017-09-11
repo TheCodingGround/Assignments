@@ -6,29 +6,41 @@
 </head>
 
 <script>
-  function theNumbers(numbr){
+  function isMultiple(seed, divisor) {
+    return seed % divisor === 0;
+    if (this.isMultiple(seed, i)) {
+
+    }
+    
+  }
 
 
 
-for(var i =1; i <=numbr; i++){
-  
-if(i%3===0&&i%5===0){
-  console.log("CodingGround")
-}else if(i%3===0){
-  console.log('coding')
-}
-else if (i%5===0){
-  console.log('Ground')
-}
 
-else{
-console.log(i);
-}
-  }} 
+    function theNumbers(numbr = 200) {
 
 
+var output = '';
+      for (var i = 1; i <= numbr; i++) {
 
-  this.theNumbers(20);
+        if (i % 3 === 0 && i % 5 === 0) {
+          output="CodingGround";
+        } else if (i % 3 === 0) {
+        output='coding';
+        }
+        else if (i % 5 === 0) {
+          output='Ground';
+        }
+
+        else {
+          output=(i);
+        }
+      }
+    }
+console.log(output);
+
+
+    this.theNumbers(20);
 
 </script>
 
