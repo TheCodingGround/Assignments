@@ -24,6 +24,9 @@ function helloWorld(languageCode){
         case afrCode:{
             return "Hello Wereld";
         }
+        case "de":{
+            return "Hallo, Welt";
+        }
         default: {
             return "Hello, World";
         }
