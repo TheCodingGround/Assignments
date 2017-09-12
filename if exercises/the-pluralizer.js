@@ -10,6 +10,7 @@ var supportedPlural = [
 
 function getPluralOf(noun){
     var exception = supportedPlural.find(n => n.noun == noun);
+    //this is called a ternary operator, and it's a short way of doing a simple if else.
     return exception != null ? exception.plural : noun + "s";
 }
 
