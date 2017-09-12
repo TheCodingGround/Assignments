@@ -1,0 +1,27 @@
+<DOCTYPE! HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>regular expressions example4</title>
+<script async src="//jsfiddle.net/yjfc6s1s/1/embed/"></script>
+<script>
+function checkIfValid(){
+  var value = document.getElementById("value").value;
+  
+  if (value.match(/^[A-z]+$/)){
+    console.log("valid name");
+  }
+  else {
+    console.log("not valid name");
+  }
+
+}
+</script>
+</head>
+<body>
+<input type="text" id="value" />
+<button onclick="checkIfValid()">
+  Is Valid Name
+</button>
+</body>
+</html>
