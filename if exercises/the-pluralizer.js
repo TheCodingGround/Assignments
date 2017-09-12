@@ -1,4 +1,5 @@
-//NOTE: Sheep and Geese are not collective nouns, they are just plurals that are exceptions to the rule.
+//NOTE: Sheep and Geese are not collective nouns as the assignment says, they are just plurals that are exceptions to the rule.
+
 //I made this global because normally we would store it in a file or database
 var supportedPlural = [
     { noun: "goose", plural: "geese" },
@@ -12,14 +13,14 @@ function getPluralOf(noun){
     return exception != null ? exception.plural : noun + "s";
 }
 
-function pluralize(noun, number){
-    if (number == 1){
+function pluralize(noun, number) {
+    if (number == 1) {
         return `${number} ${noun}`;
     }
     else if (number > 1) {
         var plural = getPluralOf(noun);
         return `${number} ${plural}`;
-    } else{
+    } else {
         throw new Error(`${number} is not supported.`);
     }
 }
