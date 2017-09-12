@@ -1,5 +1,5 @@
 //There are multiple ways to do this using if statements (other ways are not shown here) and I've given 2 examples. 
-//You can also use a switch statement, which will then be similar to the first example. 
+//You can also use a switch statement.
 //With the first one, the order is extremely important because it assumes because it wasn't higher than, 
 //it will continue checking until it finds it and then exit immediately, where the second example checks for a range
 //Option 2 has more code
