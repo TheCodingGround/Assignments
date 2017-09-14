@@ -1,0 +1,27 @@
+<DOCTYPE html:5>
+    <html>
+
+    <head>
+        <title>calculatesGrade</title>
+    </head>
+    <script>
+        function calculatesGrade(students) {
+            var sum = 0;
+            for (var i = 0; i < students.length; i++) {
+                sum += students[i][1];
+            }
+            var average = sum / students.length;
+            var symbol = "";
+            if (average  > 79 && average < 100) { symbol = "A" }
+            else if (average >= 59) { symbol = "B" }
+            else if (average >= 40) { symbol = "C" }
+            else if (average <= 30) { symbol = "D" }
+            else if (average <= 20){ symbol = "f" }
+            else { symbol = average + "F" }
+
+            return symbol;
+        }
+        console.log(calculatesGrade([["Themba", 60], ["Zondi", 77], ["lerato", 95], ["Tshepo", 88], ["Thomas", 45]]));
+    </script>
+
+    </html>
