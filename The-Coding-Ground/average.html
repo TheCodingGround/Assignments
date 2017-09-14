@@ -1,11 +1,29 @@
 <DOCTYPE html:5>
-<html>
-<head>
-<title>AVERAGE GRADE</title>
-</head>
-<script>
+    <html>
 
-    
-</script>
+    <head>
+        <title>AVERAGE GRADE</title>
+    </head>
+    <script>
+        var students = [["Themba", 60], ["Zondi", 77], ["lerato", 95], ["Tshepo", 88], ["Thomas", 45]];
+        function gradeFuntion(students) {
+            console.log(students[1]);
+            var sum = 0;
+            for (var i = 0; i < students.length; i++) {
+                sum += students[i][1];
 
-</html> 
+            }
+
+            var average = sum / students.length;
+            var symbol = "";
+            if (average >= 100) { symbol = average + "This falls under grade A" }
+            else if (sum >= 90) { symbol = average + " This falls under grade  B" }
+            else if (sum >= 80) { symbol = average + "This falls under grade C" }
+            else if (sum >= 70) { symbol = average + "This falls under grade D" }
+            else if (sum >= 60) { symbol = average + "This falls under grade F" }
+            return symbol;
+        }
+        console.log(gradeFuntion(students));
+    </script>
+
+    </html>
