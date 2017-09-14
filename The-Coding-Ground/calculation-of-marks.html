@@ -2,7 +2,7 @@
     <html>
 
     <head>
-        <title>AVERAGE GRADE</title>
+        <title>calculatesGrade</title>
     </head>
     <script>
         function calculatesGrade(students) {
@@ -12,12 +12,12 @@
             }
             var average = sum / students.length;
             var symbol = "";
-            if (average  > 79 && average < 100) { symbol = average + "This falls under grade A" }
-            else if (average >= 59 && average < 100) { symbol = average + " This falls under grade B" }
-            else if (average >= 40 && average < 100) { symbol = average + "This falls under grade C" }
-            else if (average <= 30 && average < 100) { symbol = average + "This falls under grade D" }
-            else if (average <= 20 && average < 100) { symbol = average + "This falls under grade D" }
-            else { symbol = average + "This falls under grade F" }
+            if (average  > 79 && average < 100) { symbol = "A" }
+            else if (average >= 59) { symbol = "B" }
+            else if (average >= 40) { symbol = "C" }
+            else if (average <= 30) { symbol = "D" }
+            else if (average <= 20){ symbol = "f" }
+            else { symbol = average + "F" }
 
             return symbol;
         }

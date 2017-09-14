@@ -1,25 +1,29 @@
 <DOCTYPE html:5>
     <html>
     <title>smaller-number</title>
- <script>
-        var theSmallerNumberIs = "";
-        function findSmallNumber(firstNumber, secondNumber) {
-            if (firstNumber <= secondNumber) {
-                theSmallerNumberIs = firstNumber;
-            } else {
-                theSmallerNumberIs = secondNumber;
-            }
-            console.log(theSmallerNumberIs);
-        }
-        this.findSmallNumber(25, 15)
-        this.findSmallNumber(15, 25)
-        this.findSmallNumber(133, 400)
-        this.findSmallNumber(12, 32)
-        this.findSmallNumber(25, 25)
-     </script>
+
     <head>
+
+        <script>
+            function findSmallNumber(firstNumber, secondNumber) {
+
+                var theSmallerNumberIs = "";
+                if (firstNumber <= secondNumber) {
+                    theSmallerNumberIs = firstNumber;
+                } else {
+                    theSmallerNumberIs = secondNumber;
+                }
+                return (theSmallerNumberIs);
+            }
+            console.log(this.findSmallNumber(25, 15))
+            console.log(this.findSmallNumber(15, 25))
+            console.log(this.findSmallNumber(133, 400))
+            console.log(this.findSmallNumber(12, 32))
+            console.log(this.findSmallNumber(25, 25))
+        </script>
+
     </head>
 
-   
+
 
     </html>
