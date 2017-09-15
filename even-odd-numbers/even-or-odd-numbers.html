@@ -5,17 +5,26 @@
     <title>even or odd numbers</title>
 
     <script>
-        function ChecksforNumbertype(numbers) {
-            for (var i = 1; i < numbers; i++) {
-                if (i % 2 == 0) {
-                    return  ("" +i + "" + "this number is an even number");                
-}
+        function checksforNumbertype(numbers = 51) {
+            var isEvenOrOdd =0;
+            var result;
+            for (var i = 0; i < numbers; i++) {
 
-                else { return (""+i+"this is  an odd ") }
-            console.log(i);
-        }}  
+                if (i % 2 === 0) {
+                    isEvenOrOdd = `${i} is even \n`;
+                }
+                else {
+                    isEvenOrOdd = `${i} is odd \n`;
+                } 
 
-        this.ChecksforNumbertype(51);
-    </script> 
+                result +=isEvenOrOdd;
+
+            }
+            return result;
+        }
+        console.log(checksforNumbertype());
+  
+
+    </script>
 </head>
 </html
