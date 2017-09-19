@@ -1,0 +1,31 @@
+<html>
+<head>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+
+  <script>
+    $(document).ready(function(){
+      $('#send').click(function(){
+        var name = $('#name').val();
+        var surname = $('#surname').val();
+        $.post("http://localhost:3000/saveUser?name=" + name + "&surname=" + surname,
+          function (data) {
+            alert("User Saved");
+          });
+      });
+    });
+
+  </script>
+
+</head>
+
+<body>
+  <label>Name</label>
+  <input type="text" id="name"/>
+  <label>Surname</label>
+  <input type="text" id="surname"/>
+  <button id="send">Send To Server</button>
+
+</body>
+
+</html>
