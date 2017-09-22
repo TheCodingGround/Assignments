@@ -1,5 +1,3 @@
-It's hot out! Let's make a converter based on the steps here (http://www.mathsisfun.com/temperature-conversion.html). Create a function called celsiusToFahrenheit: Store a celsius temperature into a variable. Convert it to fahrenheit and output "NN°C
-is NN°F". Create a function called fahrenheitToCelsius: Now store a fahrenheit temperature into a variable. Convert it to celsius and output "NN°F is NN°C."
 <DOCTYPE HTML>
     <html>
 
@@ -9,18 +7,17 @@ is NN°F". Create a function called fahrenheitToCelsius: Now store a fahrenheit 
         <title>fortune teller</title>
         <script>
             function celsiusToFahrenheit(celsius) {
-
+                var cel = celsius * 9;
+                var result = cel / 5 + 35;
+                return result;
             }
-
-
-
-
-
-
+            console.log(celsiusToFahrenheit(5));
 
             function fahrenheitToCelsius(fahrenheit) {
-
-
+                var fahren = fahrenheit - 32;
+                var result = fahren * 5 / 9;
+                Math.floor(result);
+                return result;
 
             }
         </script>
