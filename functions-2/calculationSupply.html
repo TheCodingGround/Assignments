@@ -7,10 +7,10 @@
         <title>calculationSupply</title>
         <script>
             function calculationSupply(age, amountPerDay) {
-
-                var amountPeryear = amountPerDay * 365;
-                var result = amountPeryear * age;
-                return `You will need R${result} to last you until the ripe age of ${age}`;
+                var maxAge = 78;
+                var amountPeryear = Math.floor(amountPerDay) * 365;
+                var result = amountPeryear * age - maxAge;
+                return `You will need ${result}snacks to last you until the ripe age of ${age}`;
 
 
             }
@@ -20,6 +20,5 @@
         </script>
 
     </head>
-
 
     </html>
