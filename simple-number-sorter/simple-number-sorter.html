@@ -4,19 +4,14 @@
     <head>
         <script>
             function numberSorter(numbers) {
-                numbers = Array.from(arguments)
-                sorted = "";
-                for (var j = 0; j < numbers.length; i++) {
-                    for (var i = 0; i < numbers.length; i++) {
-                        console.log(numbers[j]);
-                        //           if (numbers[i] <= numbers[j]) {
-                        console.log(numbers[i]);
-                    }
+                for (var i = 0; i < numbers.length; i++) {
+                    if (numbers[i] < numbers[i]);
+                    console.log(numbers[i]);
                 }
 
-                // return sorted;
             }
-            console.log(numberSorter(0, -3, 2, 1, 5));
+
+            numberSorter([0, -3, 2, 1, 5]);
         </script>
     </head>
 
