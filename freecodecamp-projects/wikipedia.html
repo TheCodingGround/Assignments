@@ -1,0 +1,89 @@
+<DOCTYPE html:5>
+    <html>
+
+    <head>
+        <style>
+            body {
+                background: url("magni.jpg") fixed center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            
+            h1 {
+                text-align: center;
+                color: black;
+                font-size: 38px;
+                opacity: 0.7
+            }
+            
+            .move {
+                border: 5px;
+                text-align: center;
+                padding-top: 12%;
+                opacity: 2.3;
+            }
+            
+            section {
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                opacity: 0.6;
+                border-radius: 3%;
+                background-color: grey;
+                color: black;
+                font-size: 34px;
+            }
+            
+            button {
+                padding-bottom: 50%;
+                padding-right: 70%;
+            }
+            
+            img {
+                opacity: 0.3;
+            }
+            
+            .moved {
+                border: 5px;
+                text-align: center;
+                font-weight: bolder;
+                opacity: 2.3;
+                padding-top: 5%;
+            }
+        </style>
+
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <title>wikipedia</title>
+        <script>
+            function getsearch() {
+
+                var shows = document.getElementById("shows").value;
+                $.getJSON('https://en.wikipedia.org/w/api.php?action=opensearch&datatype=json&limit=5&search=' + shows + '&callback=?', function(data) {
+                    console.log(data)
+                    var whatWeneed = data[1];
+                    var whatWened = data[2];
+                    console.log(whatWened);
+                    $('p').html(whatWeneed);
+                    $('h').html(whatWened);
+                });
+            };
+        </script>
+    </head>
+
+
+    <body>
+        <h1>wikipedia viewer</h1>
+        <div style="float:right;"> <img class="image" src="gold.png" style="width:304px;height:228px;"></div>
+        <div class="move">
+            <a href="https://en.wikipedia.org/wiki/Special:Random"><button type="submit" class="btn btn-primary btn-sm" formtarget="_blank">Random article</button></a>
+            <input id="shows" type="text"></input>
+            <button class="btn btn-primary" onclick=" getsearch()">search</button></div>
+        <div class="moved">
+            <section>
+                <h>what you searched </h>
+                <p class "text">you results wil appear here</p>
+            </section>
+        </div>
+    </body>
+
+    </html>
