@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Wikipedia Viewer</title>
+    <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+    <script>
+        function search(){
+            document.getElementById('search_results').innerHTML = '<img src="http://www.paulund.co.uk/app/uploads/2013/12/bar-spinner.png"/>';
+            var searchTerm = document.getElementById('search_term').value;
+
+            var url = `https://en.wikipedia.org/w/api.php?action=opensearch&search=${searchTerm}&limit=10&namespace=0&format=json&callback=?`;
+
+
+            $.getJSON(url, function(response){
+            document.getElementById('search_results').innerHTML = '';
+                var titles = response[1];
+                var descriptions = response[2];
+                var links = response[3];
+                console.log("titles", titles);
+                console.log("descriptions", descriptions);
+                console.log("links", links);
+                
+                for (var i = 0; i < titles.length; i++){
+                    var title = titles[i];
+                    var link = links[i];
+                    var description = descriptions[i];
+                    document.getElementById('search_results').innerHTML += `<h3><a href='${link}' target='_blank'>${title}</a></h3><p>${description}</p><br/>`;
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="search_term"/>
+    <button onclick="search()">Search</button>
+    <div id="search_results"></div>
+    
+</body>
+</html>
