@@ -1,17 +1,18 @@
 function checkNumbers(numbers) {
+    var results = ""
     numbers = Array.from(arguments);
-    // console.log(numbers);
+    numbers.sort(function(a, b) { return a - b });
     for (var i = 0; i < numbers.length; i++) {
-        //console.log(numbers[i]);
-
         for (var b = 1; b < numbers.length; b++) {
-            // console.log(numbers[b]);
-            if (numbers[i] === numbers[b]) {
-                return true;
-            } else { return false }
+            if (numbers[i] !== numbers[b++]) {
+                results = true;
+            } else { results = false; }
         }
     }
+    return results;
 }
-console.log(checkNumbers(1, 1, 1, 4, 5, 1));
-//console.log(checkNumbers(2, "NaN", 1, 4, 5, 1));
-console.log(checkNumbers(1, 3, 2, 4, 5, 6));
+
+
+console.log(checkNumbers(1, 2, 3, ));
+console.log(checkNumbers(1, 2, 3, 2));
+console.log(checkNumbers("1", "2", "3", "2"));
