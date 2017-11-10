@@ -1,4 +1,4 @@
-var name = "adam beck";
+var name = "vitalik Butterin";
 var obj = {
     name: 'Satoshi Nakamoto',
     prop: {
