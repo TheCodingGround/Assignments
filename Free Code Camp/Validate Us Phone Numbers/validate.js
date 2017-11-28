@@ -2,21 +2,16 @@
 
 const { expect } = require('chai');
 
-const test = (regex, str) =>{
-  return regex.test(str);
-}
-
 const telephoneCheck = (str) => {
-
-  var pass = false ||
-        test(/^(1 )?(\d{3}|\(\d{3}\))[-\s]?\d{3}[-\s]?\d{4}$/, str);
-
-  return pass;
+    return /^(1|1 )?(\d{3}|\(\d{3}\))[-\s]?\d{3}[-\s]?\d{4}$/.test(str);
 };
 
 
 
 describe('Validate Us Phone Numbers', function(){
+  it('1(555)555-5555 is valid', function(){
+    expect(telephoneCheck('1(555)555-5555')).to.equal(true);
+  });
 
   it('555)555-5555 is invalid', function(){
     expect(telephoneCheck('555)555-5555')).to.equal(false);
