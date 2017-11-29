@@ -1,20 +1,21 @@
-function StringCal(numbers) {
-  if (numbers.indexOf("-") !== -1) {
-    throw new Error("no negative numbers please!");
+const StringCal = numbers => {
+  if (numbers.indexOf("-") !== -1 && numbers[0] !== "/") {
+    throw new Error(`negatives not allowed`);
   }
-  numbers.split("", "");
-  var arr = [];
-  for (var i = 0; i < numbers.length; i++) {
-    arr.push(parseInt(numbers[i]));
+  let yu = numbers.split(/\W/);
+  let arr = [];
+  for (let i = 0; i < yu.length; i++) {
+    arr.push(parseInt(yu[i]));
   }
-  var filled = arr.filter(x => x > 0);
-  var maped = filled.reduce((a, b) => a + b, 0);
+  let filled = arr.filter(x => x >= 0);
+  let maped = filled.reduce((a, b) => a + b, 0);
   return maped;
-}
-console.log(StringCal("//;/n1;2;3;3"));
-console.log(StringCal("//:/n1:2:3:3"));
-console.log(StringCal("1,2,3"));
-console.log(StringCal("1,2,3"));
-console.log(StringCal("1\n"));
+};
+
 console.log(StringCal(""));
-console.log(StringCal("//;/n1;-2;-3;-3"));
+console.log(StringCal("1"));
+console.log(StringCal("1,23,2,2"));
+console.log(StringCal("1,\n"));
+console.log(StringCal("//;1;2"));
+console.log(StringCal("//-\n-23-2-2"));
+console.log(StringCal("1,-2"));
