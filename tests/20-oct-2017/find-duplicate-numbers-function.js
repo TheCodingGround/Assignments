@@ -12,7 +12,7 @@ function checkNumbers(numbers) {
     return results;
 }
 
-
+console.log(checkNumbers([1, 2, 3], [5, 2, 1, 4]))
 console.log(checkNumbers(1, 2, 3, ));
 console.log(checkNumbers(1, 2, 3, 2));
 console.log(checkNumbers("1", "2", "3", "2"));
