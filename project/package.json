@@ -10,7 +10,8 @@
   "dependencies": {
     "express": "^4.16.2",
     "qs": "^6.5.1",
-    "request": "^2.83.0"
+    "request": "^2.83.0",
+    "twitter-auto-oauth": "0.0.2"
   },
   "devDependencies": {},
   "description": ""
