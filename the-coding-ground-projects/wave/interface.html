@@ -1,0 +1,85 @@
+<DOCTYPE html:5>
+    <html>
+
+    <head>
+        <style>
+            body {
+                background: url("corner.jpg") fixed center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            h1 {
+                text-align: center;
+                background-color: whitesmoke;
+                color: whitesmoke;
+                font-size: 38px;
+                opacity: 0.7
+            }
+
+            .move {
+                border: 5px;
+                text-align: center;
+                padding-top: 12%;
+                opacity: 2.3;
+            }
+
+            section {
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                opacity: 0.6;
+                border-radius: 3%;
+                background-color: whitesmoke;
+                color: whitesmoke;
+                font-size: 34px;
+            }
+
+            button {
+                padding-bottom: 50%;
+                padding-right: 70%;
+            }
+
+            img {
+                opacity: 0.3;
+            }
+
+            .moved {
+                border: 5px;
+                text-align: center;
+                font-weight: bolder;
+                opacity: 2.3;
+                padding-top: 5%;
+            }
+        </style>
+
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="./index.js"></script>
+        <title>status wave</title>
+        <script>
+getRequestToken(cb)
+
+        </script>
+    </head>
+
+
+    <body onload=getRequestToken()>
+        <h1>status wave!</h1>
+        <div class="move">
+            <input id="shows" type="text"style="height:13%;font-size:14pt;width:30%"></input>
+            <button class="btn btn-primary" onclick=" getsearch()">post</button></div>
+        <div class="moved">
+            Select a file: <input type="file" name="img">
+            <input type="submit">
+        </div>
+        
+<div>
+
+</div>
+
+
+
+    </body>
+
+
+    </html>
