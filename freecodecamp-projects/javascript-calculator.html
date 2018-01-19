@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head> <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>calculator</title>
+    <script>
+        function one() {
+            document.getElementById("total").innerHTML += "1";
+        }
+        function two() {
+            document.getElementById("total").innerHTML += "2";
+        }
+        function three() {
+            document.getElementById("total").innerHTML += "3";
+        }
+
+        function four() {
+            document.getElementById("total").innerHTML += "4";
+        }
+        function five() {
+            document.getElementById("total").innerHTML += "5";
+        }
+        function six() {
+            document.getElementById("total").innerHTML += "6";
+        }
+        function seven() {
+            document.getElementById("total").innerHTML += "7";
+        }
+        function eight() {
+            document.getElementById("total").innerHTML += "8";
+        }
+        function nine() {
+            document.getElementById("total").innerHTML += "9";
+        }
+        function plus() {
+            document.getElementById("total").innerHTML += "+";
+        }
+        function subraction() {
+            document.getElementById("total").innerHTML += "-";
+        }
+        function divide() {
+            document.getElementById("total").innerHTML += "/";
+        }
+        function multiply() {
+            document.getElementById("total").innerHTML += "*";
+        }
+        function equals() {
+            document.getElementById("total").innerHTML += "=";
+        }
+        function clear() {
+            document.getElementById("total").innerHTML = '';
+        }
+    </script>
+    <style>
+        .textarea {
+            height: 100%;
+            text-align: right;
+            width: 440%;
+            font-size: 2rem;
+            border: 1px solid black;
+            border-radius: 20px;
+        }
+
+        .six {
+            font-size: 34px;
+            border: 1px solid black;
+            border-radius: 40%;
+        }
+
+        section {
+            padding-left: 30%;
+            padding-bottom: 30%;
+            padding-top: 10%;
+        }
+
+        .cons {
+            display: flex;
+            flex-direction: row;
+        }
+
+        div {
+            width: 50px;
+            height: 50px;
+            margin: 10px;
+        }
+
+        .size {
+            width: 100px;
+            border: 1px solid black;
+            border-radius: 40%;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+
+        <nav class="cons"></nav>
+        <div>
+            <div class="textarea" id="total" colspan="4"> </div>
+        </div>
+        </nav>
+        <nav class="cons">
+            <div><button onclick="clear()" class="btn btn-primary six" id="clear">C</button> </div>
+            <div><button onclick="two()" class="btn btn-primary six">2</button> </div>
+            <div><button onclick="" class="btn btn-primary six">4</button> </div>
+            <div><button onclick="divide()" class="btn btn-primary six">/</button> </div>
+        </nav>
+        <nav class="cons">
+            <div><button onclick="seven()" class="btn btn-primary six">7</button> </div>
+            <div><button onclick="eight()" class="btn btn-primary six">8</button> </div>
+            <div><button onclick="nine()" class="btn btn-primary six">9</button> </div>
+            <div><button onclick="multiplication()" class="btn btn-primary six">X</button> </div>
+        </nav>
+        <nav class="cons">
+            <div><button onclick="four()" class="btn btn-primary six">4</button> </div>
+            <div><button onclick="five()" class="btn btn-primary six">5</button> </div>
+            <div><button onclick="six()" class="btn btn-primary six">6</button> </div>
+            <div><button onclick="subtration()" class="btn btn-primary six">-</button> </div>
+        </nav>
+        <nav class="cons">
+            <div><button onclick="one()" class="btn btn-primary six">1</button> </div>
+            <div><button onclick="two()" class="btn btn-primary six">2</button> </div>
+            <div><button onclick="three()" class="btn btn-primary six">3</button> </div>
+            <div><button onclick="plus()" class="btn btn-primary six" id="plus">+</button> </div>
+        </nav>
+        <nav class="cons">
+            <div><button onclick="zero()" class="btn btn-primary six">0</button> </div>
+            <div><button onclick="dot()" class="btn btn-primary six">.</button> </div>
+            <div><button onclick="clear()" class="btn btn-primary size" id="clear">=</button> </div>
+        </nav>
+    </section>
+</body>
+
+</html>
