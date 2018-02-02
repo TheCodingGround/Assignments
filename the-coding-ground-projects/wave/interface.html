@@ -1,85 +1,122 @@
-<DOCTYPE html:5>
-    <html>
+<!DOCTYPE html>
+<html lang="en">
 
-    <head>
-        <style>
-            body {
-                background: url("corner.jpg") fixed center;
-                background-size: cover;
-                background-repeat: no-repeat;
-            }
+<head>
 
-            h1 {
-                text-align: center;
-                background-color: whitesmoke;
-                color: whitesmoke;
-                font-size: 38px;
-                opacity: 0.7
-            }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: whitesmoke;
+        }
 
-            .move {
-                border: 5px;
-                text-align: center;
-                padding-top: 12%;
-                opacity: 2.3;
-            }
+        li {
+            font-size: 24px
+        }
 
-            section {
-                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-                opacity: 0.6;
-                border-radius: 3%;
-                background-color: whitesmoke;
-                color: whitesmoke;
-                font-size: 34px;
-            }
+        li a {
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
 
-            button {
-                padding-bottom: 50%;
-                padding-right: 70%;
-            }
+        li a:hover {
+            border: 0.3px solid blue;
+            border-radius: 13%;
+        }
 
-            img {
-                opacity: 0.3;
-            }
+        body {
+            background: url("corner.jpg") fixed center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
 
-            .moved {
-                border: 5px;
-                text-align: center;
-                font-weight: bolder;
-                opacity: 2.3;
-                padding-top: 5%;
-            }
-        </style>
+        h1 {
+            text-align: center;
+            background-color: whitesmoke;
+            color: whitesmoke;
+            font-size: 38px;
+            opacity: 0.7
+        }
+
+        .move {
+            border: 5px;
+            text-align: center;
+            padding-top: 12%;
+            opacity: 2.3;
+        }
+
+        section {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+            'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            opacity: 0.6;
+            border-radius: 3%;
+            background-color: whitesmoke;
+            color: whitesmoke;
+            font-size: 34px;
+        }
+
+        button {
+            padding-bottom: 50%;
+            padding-right: 70%;
+        }
+
+        img {
+            opacity: 0.3;
+        }
+
+        .moved {
+            border: 5px;
+            text-align: center;
+            font-weight: bolder;
+            opacity: 2.3;
+            padding-top: 5%;
+        }
+    </style>
 
 
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="./index.js"></script>
-        <title>status wave</title>
-        <script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./index.js"></script>
+    <title>status wave</title>
+
+</head>
+
+<body onload=getRequestToken()>
+    <ul>
+        <li>
+            welcome to status wave!
+        </li>
+        <li>
+            <a href="/login.html">Login</a>
+        </li>
+        <li>
+            <a href="/signup.html">Sign Up</a>
+        </li>
+    </ul>
+
+    <h1>status wave!</h1>
+    <div class="move">
+        <input id="shows" type="text" style="height:13%;font-size:14pt;width:30%"></input>
+        <button class="btn btn-primary" onclick=" getsearch()">post</button></div>
+    <div class="moved">
+        Select a file: <input type="file" name="img">
+        <input type="submit">
+    </div>
+
+    <div>
+
+    </div>
 
 
-        </script>
-    </head>
+</body>
 
-
-    <body onload=getRequestToken()>
-        <h1>status wave!</h1>
-        <div class="move">
-            <input id="shows" type="text"style="height:13%;font-size:14pt;width:30%"></input>
-            <button class="btn btn-primary" onclick=" getsearch()">post</button></div>
-        <div class="moved">
-            Select a file: <input type="file" name="img">
-            <input type="submit">
-        </div>
-        
-<div>
-
-</div>
-
-
-
-    </body>
-
-
-    </html>
+</html>

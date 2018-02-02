@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .flox {
+            box-shadow: 49px;
+            text-align: center;
+            flex-direction: row;
+            display: flex;
+            flex: 9;
+            justify-content: center;
+        }
+
+        button {
+            width: 350px;
+            font-size: 100px;
+            color: white;
+            font-family: roboto;
+            height: 230px;
+            background-color: black;
+            border: 1px solid white;
+        }
+
+        .nab {
+            padding-top: 92px;
+        }
+    </style>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body onload="selctor()">
+    <nav class="nab">
+        <div class="flox">
+            <div class="boxSize">
+                <button onclick="boxes('boxone1')" id="boxone1"></button>
+            </div>
+            <div>
+                <button onclick="boxes('boxone2')" id="boxone2"></button>
+            </div>
+            <div>
+                <button onclick="boxes('boxone3')" id="boxone3"></button>
+            </div>
+        </div>
+        <div class="flox">
+            <div>
+                <button onclick="boxes('boxone4')" id="boxone4"></button>
+            </div>
+            <div>
+                <button onclick="boxes('boxone5')" id="boxone5"></button>
+            </div>
+            <div>
+                <button onclick="boxes('boxone6')" id="boxone6"></button>
+            </div>
+        </div>
+        <div class="flox">
+            <div>
+                <button onclick="boxes('boxone7')" id="boxone7"></button>
+            </div>
+            <div>
+                <button onclick="boxes('boxone8')" id="boxone8"></button>
+            </div>
+            <div>
+                <button onclick="boxes('boxone9')" id="boxone9"></button>
+            </div>
+        </div>
+    </nav>
+</body>
+<script>
+    let = player = [];
+    let = artificial = [];
+    var cmarker = "";
+    var compute = [];
+    var arr = [];
+    var ids = ["boxone1", "boxone2", "boxone3", "boxone4", "boxone5", "boxone6", "boxone7", "boxone8", "boxone9",]
+    var marker = "";
+    var identity = "";
+    function selctor() {
+        marker = prompt("choose your marker")
+    }
+    function boxes(edenti) {
+        if (marker.length > 1 && (marker !== "x" || marker !== cmarker)) {
+            identity = "";
+            alert("please select one character be it X or O ");
+            window.location.reload(true);
+            document.getElementById(edenti).innerHTML = "";
+        } else {
+            console.log(marker)
+            if (marker === "x") {
+                cmarker = "O";
+            } else { cmarker = "X" }
+            identity = document.getElementById(edenti).innerHTML;
+            player.push(edenti);
+            compute.push(edenti);
+            document.getElementById(edenti).innerHTML = marker;
+            identity = "";
+            // if (arr.indexOf(edenti) === -1) {
+            //     arr.push(edenti);
+
+            // 
+            machine();
+        }
+
+    }
+    function machine() {
+        var randomno = Math.floor(Math.random() * 8);
+        if (compute.indexOf(ids[randomno]) === -1) {
+            console.log(compute);
+            console.log(randomno);
+            document.getElementById(`${ids[randomno]}`).innerHTML = cmarker;
+            artificial.push(ids[randomno]);
+            compute.push(ids[randomno]);
+
+        } else {
+            machine();
+
+
+        }
+        checksWin();
+
+    }
+    function checksWin() {
+        console.log(player);
+        console.log(artificial);
+        var lines = [
+            ["boxone1", "boxone2", "boxone3"],
+            ["boxone4", "boxone5", "boxone6"],
+            ["boxone7", "boxone8", "boxone9"],
+            ["boxone1", "boxone4", "boxone5"],
+            ["boxone2", "boxone5", "boxone8"],
+            ["boxone3", "boxone6", "boxone9"],
+            ["boxone1", "boxone5", "boxone9"],
+            ["boxone3", "boxone5", "boxone7"],
+        ];
+        for (var i = 0; i < lines.length; i++) {
+            console.log(lines[i])
+        }
+
+    }
+
+</script>
+
+</html>
+<!-- switch (edenti) {
+                case "boxone1":
+                console.log(compute);
+                    if (compute.indexOf("1")===-1) {
+                        compute.push("1");
+                        document.getElementById("boxone5").innerHTML = cmarker;
+                        console.log(compute);
+                    }
+
+                    break;
+                case "boxone2":
+                        compute.push("2")
+                console.log(compute);
+                    if (arr.indexOf(edenti) !== -1 && compute.indexOf(cmarker) === arr.indexOf(edenti)) {
+                        document.getElementById("boxone3").innerHTML = cmarker;
+                    }
+                    break;
+                case "boxone3":
+                console.log(compute);
+                        compute.push("3");
+                    if (arr.indexOf(edenti) !== -1) {
+                        document.getElementById("boxone2").innerHTML = cmarker;
+
+                    }
+                    break;
+                case "boxone4":
+                console.log(compute);
+                    if (compute.indexOf("3") === -1) {
+                        document.getElementById("boxone3").innerHTML = cmarker;
+                        compute.push("4");
+                    } 
+                    break;
+                case "boxone5":
+                        compute.push("5");
+                console.log(compute);
+                    if (compute.indexOf("4") === -1) {
+                        document.getElementById("boxone4").innerHTML = cmarker;
+                    }
+                    break;
+                case "boxone6":
+                console.log(compute);
+                    if (compute.indexOf("5") === -1) {
+                        compute.push("6");
+                        document.getElementById("boxone5").innerHTML = cmarker;
+                    }
+                    break;
+                case "boxone7":
+                        compute.push("7");
+                console.log(compute);
+                    if (arr.indexOf(edenti) !== -1) {
+                        document.getElementById("boxone6").innerHTML = cmarker;
+                    }
+                    break;
+                case "boxone8":
+                        compute.push("8");
+                console.log(compute);
+                    if (arr.indexOf("8")) {
+                        document.getElementById("boxone7").innerHTML = cmarker;
+                    }
+                    break;
+                case "boxone9":
+                        compute.push("9");
+                console.log(compute);
+                    if (arr.indexOf(edenti) !== -1) {
+                        document.getElementById("boxone8").innerHTML = cmarker;
+                        
+                    }
+                    break;
+                default: break;
+            } -->
