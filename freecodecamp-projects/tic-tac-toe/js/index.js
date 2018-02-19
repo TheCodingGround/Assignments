@@ -20,6 +20,7 @@
             } else { computerMarker = "X" }
             position = document.getElementById(playerMarker).innerHTML;
             player.push(playerMarker);
+            console.log(playerMarker);
             compute.push(playerMarker);
             document.getElementById(playerMarker).innerHTML = marker;
             position = "";
@@ -30,6 +31,7 @@
     function machine() {
         var RandomNumber = Math.floor(Math.random() * 8);
         if (compute.indexOf(ids[RandomNumber]) === -1) {
+            console.log(computerMarker);
             document.getElementById(`${ids[RandomNumber]}`).innerHTML = computerMarker;
             artificial.push(ids[RandomNumber]);
             compute.push(ids[RandomNumber]);
@@ -37,7 +39,7 @@
         } else {
             machine();
         }
-
+checksWin();
     }
     function checksWin() {
         var lines = [
@@ -50,4 +52,7 @@
             ["boxone1", "boxone5", "boxone9"],
             ["boxone3", "boxone5", "boxone7"],
         ];   
+        if(player.length ===4){
+            location.reload(); 
+        }       
     }
