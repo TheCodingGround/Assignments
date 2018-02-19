@@ -1,49 +1,43 @@
  let = player = [];
     let = artificial = [];
-    var cmarker = "";
+    var computerMarker = "";
     var compute = [];
     var arr = [];
     var ids = ["boxone1", "boxone2", "boxone3", "boxone4", "boxone5", "boxone6", "boxone7", "boxone8", "boxone9",]
     var marker = "";
-    var identity = "";
+    var position = "";
     function selctor() {
         marker = prompt("choose your marker")
     }
-    function boxes(edenti) {
-        if (marker.length > 1 && (marker !== "x" || marker !== cmarker)) {
-            identity = "";
+    function boxes(playerMarker) {
+        if (marker.length > 1 && (marker !== "x" || marker !== computerMarker)) {
             alert("please select one character be it X or O ");
             window.location.reload(true);
-            document.getElementById(edenti).innerHTML = "";
+            document.getElementById(playerMarker).innerHTML = "";
         } else {
             if (marker === "x") {
-                cmarker = "O";
-            } else { cmarker = "X" }
-            identity = document.getElementById(edenti).innerHTML;
-            player.push(edenti);
-            compute.push(edenti);
-            document.getElementById(edenti).innerHTML = marker;
-            identity = "";
-   
+                computerMarker = "O";
+            } else { computerMarker = "X" }
+            position = document.getElementById(playerMarker).innerHTML;
+            player.push(playerMarker);
+            compute.push(playerMarker);
+            document.getElementById(playerMarker).innerHTML = marker;
+            position = "";
             machine();
         }
 
     }
     function machine() {
-        var randomno = Math.floor(Math.random() * 8);
-        if (compute.indexOf(ids[randomno]) === -1) {
-            document.getElementById(`${ids[randomno]}`).innerHTML = cmarker;
-            artificial.push(ids[randomno]);
-            compute.push(ids[randomno]);
+        var RandomNumber = Math.floor(Math.random() * 8);
+        if (compute.indexOf(ids[RandomNumber]) === -1) {
+            document.getElementById(`${ids[RandomNumber]}`).innerHTML = computerMarker;
+            artificial.push(ids[RandomNumber]);
+            compute.push(ids[RandomNumber]);
 
         } else {
             machine();
-
-
         }
-        checksWin();
 
-          console.log(player);
     }
     function checksWin() {
         var lines = [
@@ -56,9 +50,4 @@
             ["boxone1", "boxone5", "boxone9"],
             ["boxone3", "boxone5", "boxone7"],
         ];   
-        for (let i = 0; i < lines.length; i++) {
-       if(player)
-          console.log(lines[i])
-        }
-
     }
