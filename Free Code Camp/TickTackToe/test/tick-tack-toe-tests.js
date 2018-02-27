@@ -200,4 +200,35 @@ describe('Tic Tac Toe', function(){
     expect(currentState).to.be.eql(false);
     expect(winner).to.eql(playerOne);
   });
+
+  it("Will tell us if it's a draw", function(){
+    tickTacToe.restartGame();
+
+    /*
+     0,2|1,2|2,2
+     ___________
+     0,1|1,1|2,1
+     ___________
+     0,0|1,0|2,0
+     */
+
+    tickTacToe.makeMove(0,0, playerOne);
+    tickTacToe.makeMove(2,0, playerOne);
+    tickTacToe.makeMove(0,1, playerOne);
+    tickTacToe.makeMove(2,1, playerOne);
+    tickTacToe.makeMove(1,2, playerOne);
+
+    tickTacToe.makeMove(1,0, playerTwo);
+    tickTacToe.makeMove(1,1, playerTwo);
+    tickTacToe.makeMove(0,2, playerTwo);
+    tickTacToe.makeMove(2,2, playerTwo);
+
+    var currentBoard = tickTacToe.getCurrentBoard();
+
+    var isInProgress = tickTacToe.isInProgress();
+    var winner = tickTacToe.getWinner();
+
+    expect(isInProgress).to.be.eql(false);
+    expect(winner).to.eql('draw');
+  });
 });

@@ -6,33 +6,70 @@ restartGame();
 function makeMove(x, y, player){
   currentGameState.board[x][y] = player;
 
-  if (hasWinner()){
+  var board = currentGameState.board;
+
+  var currentGameWinner = calculateWinner(board);
+
+  if (currentGameWinner){
+    currentGameState.winner = currentGameWinner;
     currentGameState.inProgress = false;
   }
 }
 
-function hasWinner(board){
-  if (checkRowsAndColumnsForWinner(board)) return true;
-  else if (checkDiagonalsForWinner(board)) return true;
+function calculateWinner(board){
+  var winnerRowsAndColumns = checkRowsAndColumnsForWinner(board);
+  var winnerDiagonals = checkDiagonalsForWinner(board);
 
-  return false;
+  if (winnerRowsAndColumns){
+    return winnerRowsAndColumns;
+  }else if (winnerDiagonals){
+    return winnerDiagonals;
+  }else if (isDraw(board)){
+    return 'draw';//don't like returning draw here, will need to refactor to make it better
+  }
+
+  return null;
 }
 
-function checkDiagonalsForWinner(){
-  var board = currentGameState.board;
+//this function will return true if it's a winner that's why the calling function should first check if there is a winner before calling this function
+function isDraw(board){
+
+  for (var row of board){
+    for (var cell of row){
+      if (!cell) return false;
+    }
+  }
+
+  return true;
+}
+
+function checkRowsAndColumnsForWinner(board){
+  for (var x = 0; x < 3; x++){
+    var column = getRow(x, board);
+    var row = getColumn(x, board);
+
+    if (isWinningCombination(row)) {
+      return row[0];
+    } else if (isWinningCombination(column)) {
+      return column[0];
+    }
+  }
+
+  return null;
+}
+
+function checkDiagonalsForWinner(board){
 
   var topLeftToBottomRight = [board[0][2], board[1][1], board[2][0]];
   var bottomLeftToTopRight = [board[0][0], board[1][1], board[2][2]];
 
   if (isWinningCombination(topLeftToBottomRight)){
-    markWinner(topLeftToBottomRight);
-    return true;
+    return topLeftToBottomRight[0];
   }else if (isWinningCombination(bottomLeftToTopRight)){
-    markWinner(bottomLeftToTopRight);
-    return true;
+    return bottomLeftToTopRight[0];
   }
 
-  return false;
+  return null;
 }
 
 function markWinner(combinations){
@@ -41,16 +78,16 @@ function markWinner(combinations){
 
 function isWinningCombination(row){
   return (
-    row[0] != null && 
-    row[0] === row[1] && 
+    row[0] != null &&
+    row[0] === row[1] &&
     row[1] === row[2]
   )
 }
 
 function isWinningCombination(row){
   return (
-    row[0] != null && 
-    row[0] === row[1] && 
+    row[0] != null &&
+    row[0] === row[1] &&
     row[1] === row[2]
   )
 }
@@ -84,19 +121,17 @@ function restartGame(){
 }
 
 
-function getColumn(rowNumber){
-  var board = currentGameState.board;
+function getColumn(rowNumber, board){
   return board[rowNumber];
 }
 
-function getRow(columnNumber){
-  var board = currentGameState.board;
+function getRow(columnNumber, board){
 
   return [board[0][columnNumber],
   board[1][columnNumber],
   board[2][columnNumber]];
 }
 
-module.exports = {makeMove, getCurrentBoard, isInProgress, getWinner, restartGame};
+module.exports = {makeMove, getCurrentBoard, isInProgress, getWinner, restartGame, calculateWinner};
 
 
