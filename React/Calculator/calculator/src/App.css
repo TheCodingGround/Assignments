@@ -26,3 +26,16 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.calculator {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 5px;
+    max-width: 300px;
+}
+
+.result-label {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    text-align: right;
+}
