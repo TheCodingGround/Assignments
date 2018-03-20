@@ -6,10 +6,20 @@ import Buttons from './Buttons';
 class App extends Component {
     constructor(props){
         super(props)
+        console.log('the constructor for app has been called');
         this.state = {currentTotal: 0, screenValue: ""};
 
         this.addToScreenValue = this.addToScreenValue.bind(this);
     }
+
+    componentWillMount(){
+        console.log("App will mount");
+    }
+
+    componentDidMount(){
+        console.log("App did mount");
+    }
+    
 
     addToScreenValue(event){
         event.preventDefault();
@@ -21,6 +31,7 @@ class App extends Component {
 
 
   render() {
+      console.log('Component is rendering');
     return (
       <div className="App">
         <header className="App-header">
