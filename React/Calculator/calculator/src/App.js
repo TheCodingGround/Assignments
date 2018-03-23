@@ -7,17 +7,15 @@ class App extends Component {
     constructor(props){
         super(props)
         console.log('the constructor for app has been called');
-        this.state = {currentTotal: 0, screenValue: ""};
+        this.state = {
+            currentTotal: 0,
+            screenValue: "",
+            name: '',
+            surname: ''
+        };
 
         this.addToScreenValue = this.addToScreenValue.bind(this);
-    }
-
-    componentWillMount(){
-        console.log("App will mount");
-    }
-
-    componentDidMount(){
-        console.log("App did mount");
+        this.setInput = this.setInput.bind(this);
     }
     
 
@@ -29,15 +27,24 @@ class App extends Component {
         this.setState(newState);
     }
 
+    setInput(e){
+        var state = this.state;
+
+        state[e.target.name] = e.target.value;
+
+        this.setState({...state});
+    }
+
 
   render() {
-      console.log('Component is rendering');
+      console.log('current state', this.state);
     return (
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Welcome to our Calculator. Happy Calculating</h1>
         </header>
         <Buttons addToScreenValue={this.addToScreenValue} screenValue={this.state.screenValue}/>
+        
       </div>
     );
   }
