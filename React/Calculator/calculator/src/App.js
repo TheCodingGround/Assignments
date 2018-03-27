@@ -6,7 +6,6 @@ import Buttons from './Buttons';
 class App extends Component {
     constructor(props){
         super(props)
-        console.log('the constructor for app has been called');
         this.state = {
             currentTotal: 0,
             screenValue: "",
@@ -35,15 +34,17 @@ class App extends Component {
         this.setState({...state});
     }
 
+    clear(){
+      this.setState({screenValue:''});
+    }
 
   render() {
-      console.log('current state', this.state);
     return (
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Welcome to our Calculator. Happy Calculating</h1>
         </header>
-        <Buttons addToScreenValue={this.addToScreenValue} screenValue={this.state.screenValue}/>
+        <Buttons clear={() => this.clear()} addToScreenValue={this.addToScreenValue} screenValue={this.state.screenValue}/>
         
       </div>
     );
