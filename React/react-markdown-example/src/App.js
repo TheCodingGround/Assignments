@@ -9,18 +9,10 @@ class App extends Component {
     this.state = {source : ''}
   }
 
-  handleChange(e){
-    const name = e.target.name;
-    const value = e.target.value;
-
-    const newState = this.state;
+  handleSourceChange(name, value){
+    var newState = this.state;
     newState[name] = value;
-
-    this.setState(newState)
-  }
-
-  handleSourceChange(e){
-    this.setState({source : e.target.value})
+    this.setState(...newState)
   }
 
 
@@ -32,7 +24,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <textarea name='source' rows={9} onChange={(e) => this.handleChange(e)} />
+        <textarea name='source' rows={9} onChange={(e) => this.handleSourceChange(e.target.name, e.target.value)} />
         <ReactMarkdown source={this.state.source} />
       </div>
     );
