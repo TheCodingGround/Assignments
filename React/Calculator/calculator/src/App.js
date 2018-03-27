@@ -7,16 +7,36 @@ class App extends Component {
     constructor(props){
         super(props)
         this.state = {
+          currentCalc: '',
             currentTotal: 0,
             screenValue: "",
             name: '',
             surname: ''
         };
 
+
         this.addToScreenValue = this.addToScreenValue.bind(this);
         this.setInput = this.setInput.bind(this);
     }
-    
+
+    plus(){
+      var newState = this.state;
+      newState.currentCalc = newState.currentCalc + Number(this.state.screenValue).toString() + "+";
+      this.setState({...newState})
+      this.clear()
+    }
+
+    equals(){
+      var currentCalc = this.state.currentCalc + this.state.screenValue;
+      var calcResult = eval(currentCalc);
+
+      this.setState({
+        screenValue: calcResult, 
+        currenctCalc:currentCalc
+      })
+
+
+    }
 
     addToScreenValue(event){
         event.preventDefault();
@@ -44,7 +64,14 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Welcome to our Calculator. Happy Calculating</h1>
         </header>
-        <Buttons clear={() => this.clear()} addToScreenValue={this.addToScreenValue} screenValue={this.state.screenValue}/>
+        <Buttons clear={() => this.clear()} 
+        currentCalc={this.state.currentCalc}
+        addToScreenValue={this.addToScreenValue} 
+        screenValue={this.state.screenValue}
+        plus={() => this.plus()}
+        equals={()=> this.equals()}
+        
+        />
         
       </div>
     );

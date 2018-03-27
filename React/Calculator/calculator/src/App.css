@@ -39,3 +39,7 @@
     grid-column-end: 4;
     text-align: right;
 }
+
+.current-calc-label {
+  opacity: 0.5
+}
