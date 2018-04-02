@@ -18,13 +18,11 @@ class App extends Component {
     this.addToScreenValue = this.addToScreenValue.bind(this);
   }
 
-  plus() {
+  appendOperator(e) {
+    const operator = e.target.name;
     var newState = this.state;
 
-    newState.currentCalc =
-      newState.currentCalc + Number(this.state.screenValue).toString() + "+";
-
-    newState.currentWorkingValues.push("+");
+    newState.currentWorkingValues.push(operator);
 
     this.setState({ ...newState, screenValue: "" });
   }
@@ -97,7 +95,7 @@ class App extends Component {
           currentCalc={currentCalc}
           addToScreenValue={this.addToScreenValue}
           screenValue={this.state.screenValue}
-          plus={() => this.plus()}
+          appendOperator={e => this.appendOperator(e)}
           equals={() => this.equals()}
         />
       </div>
