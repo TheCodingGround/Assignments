@@ -8,7 +8,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      currentCalc: "",
+      currentWorkingValues: [],
       currentTotal: 0,
       screenValue: "",
       name: "",
@@ -16,24 +16,27 @@ class App extends Component {
     };
 
     this.addToScreenValue = this.addToScreenValue.bind(this);
-    this.setInput = this.setInput.bind(this);
   }
 
   plus() {
     var newState = this.state;
+
     newState.currentCalc =
       newState.currentCalc + Number(this.state.screenValue).toString() + "+";
-    this.setState({ ...newState });
-    this.clear();
+
+    newState.currentWorkingValues.push("+");
+
+    this.setState({ ...newState, screenValue: "" });
   }
 
   equals() {
-    var currentCalc = this.state.currentCalc + this.state.screenValue;
-    var calcResult = eval(currentCalc);
+    var workingValuesToCalc = this.state.currentWorkingValues.join("");
+
+    const calcResult = eval(workingValuesToCalc);
 
     this.setState({
       screenValue: calcResult,
-      currentCalc: currentCalc
+      currentCalc: workingValuesToCalc
     });
   }
 
@@ -41,23 +44,43 @@ class App extends Component {
     event.preventDefault();
 
     var newState = this.state;
-    newState.screenValue += event.target.name;
+    var valueToAdd = event.target.name;
+
+    newState.currentWorkingValues.push(valueToAdd);
+
+    newState.screenValue += valueToAdd;
     this.setState(newState);
   }
 
-  setInput(e) {
-    var state = this.state;
-
-    state[e.target.name] = e.target.value;
-
-    this.setState({ ...state });
-  }
-
   clear() {
-    this.setState({ screenValue: "" });
+    var currentScreenValue = this.state.screenValue;
+
+    var workingValuesToCalc = this.state.currentWorkingValues;
+
+    var newWorkingValuesToCalc = workingValuesToCalc.slice(
+      0,
+      workingValuesToCalc.length - currentScreenValue.length
+    );
+
+    this.setState({
+      screenValue: "",
+      currentWorkingValues: newWorkingValuesToCalc
+    });
   }
 
   render() {
+    var evalOfCurrentWorkingValues = "";
+    try {
+      evalOfCurrentWorkingValues = eval(
+        this.state.currentWorkingValues.join("")
+      );
+    } catch (e) {}
+
+    var currentCalc = this.state.currentWorkingValues.join("");
+
+    if (evalOfCurrentWorkingValues)
+      currentCalc = currentCalc + " = " + evalOfCurrentWorkingValues;
+
     return (
       <div className="App">
         <header className="App-header">
@@ -67,7 +90,7 @@ class App extends Component {
         </header>
         <Buttons
           clear={() => this.clear()}
-          currentCalc={this.state.currentCalc}
+          currentCalc={currentCalc}
           addToScreenValue={this.addToScreenValue}
           screenValue={this.state.screenValue}
           plus={() => this.plus()}
