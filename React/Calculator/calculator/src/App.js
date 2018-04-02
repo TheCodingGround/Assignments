@@ -71,9 +71,13 @@ class App extends Component {
   render() {
     var evalOfCurrentWorkingValues = "";
     try {
-      evalOfCurrentWorkingValues = eval(
-        this.state.currentWorkingValues.join("")
-      );
+      if (
+        this.state.screenValue.length < this.state.currentWorkingValues.length
+      ) {
+        evalOfCurrentWorkingValues = eval(
+          this.state.currentWorkingValues.join("")
+        );
+      }
     } catch (e) {}
 
     var currentCalc = this.state.currentWorkingValues.join("");
