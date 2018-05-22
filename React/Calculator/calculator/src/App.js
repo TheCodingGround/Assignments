@@ -1,78 +1,103 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Buttons from './Buttons';
+import React, { Component } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import Buttons from "./Buttons";
 
 class App extends Component {
-    constructor(props){
-        super(props)
-        this.state = {
-          currentCalc: '',
-            currentTotal: 0,
-            screenValue: "",
-            name: '',
-            surname: ''
-        };
+  constructor(props) {
+    super(props);
 
+    this.state = {
+      currentWorkingValues: [],
+      currentTotal: 0,
+      screenValue: "",
+      name: "",
+      surname: ""
+    };
 
-        this.addToScreenValue = this.addToScreenValue.bind(this);
-        this.setInput = this.setInput.bind(this);
-    }
+    this.addToScreenValue = this.addToScreenValue.bind(this);
+  }
 
-    plus(){
-      var newState = this.state;
-      newState.currentCalc = newState.currentCalc + Number(this.state.screenValue).toString() + "+";
-      this.setState({...newState})
-      this.clear()
-    }
+  appendOperator(e) {
+    const operator = e.target.name;
+    var newState = this.state;
 
-    equals(){
-      var currentCalc = this.state.currentCalc + this.state.screenValue;
-      var calcResult = eval(currentCalc);
+    newState.currentWorkingValues.push(operator);
 
-      this.setState({
-        screenValue: calcResult, 
-        currenctCalc:currentCalc
-      })
+    this.setState({ ...newState, screenValue: "" });
+  }
 
+  equals() {
+    var workingValuesToCalc = this.state.currentWorkingValues.join("");
 
-    }
+    const calcResult = eval(workingValuesToCalc);
 
-    addToScreenValue(event){
-        event.preventDefault();
+    this.setState({
+      screenValue: calcResult,
+      currentCalc: workingValuesToCalc
+    });
+  }
 
-        var newState = this.state;
-        newState.screenValue += event.target.name;
-        this.setState(newState);
-    }
+  addToScreenValue(event) {
+    event.preventDefault();
 
-    setInput(e){
-        var state = this.state;
+    var newState = this.state;
+    var valueToAdd = event.target.name;
 
-        state[e.target.name] = e.target.value;
+    newState.currentWorkingValues.push(valueToAdd);
 
-        this.setState({...state});
-    }
+    newState.screenValue += valueToAdd;
+    this.setState(newState);
+  }
 
-    clear(){
-      this.setState({screenValue:''});
-    }
+  clear() {
+    var currentScreenValue = this.state.screenValue;
+
+    var workingValuesToCalc = this.state.currentWorkingValues;
+
+    var newWorkingValuesToCalc = workingValuesToCalc.slice(
+      0,
+      workingValuesToCalc.length - currentScreenValue.length
+    );
+
+    this.setState({
+      screenValue: "",
+      currentWorkingValues: newWorkingValuesToCalc
+    });
+  }
 
   render() {
+    var evalOfCurrentWorkingValues = "";
+    try {
+      if (
+        this.state.screenValue.length < this.state.currentWorkingValues.length
+      ) {
+        evalOfCurrentWorkingValues = eval(
+          this.state.currentWorkingValues.join("")
+        );
+      }
+    } catch (e) {}
+
+    var currentCalc = this.state.currentWorkingValues.join("");
+
+    if (evalOfCurrentWorkingValues)
+      currentCalc = currentCalc + " = " + evalOfCurrentWorkingValues;
+
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Welcome to our Calculator. Happy Calculating</h1>
+          <h1 className="App-title">
+            Welcome to our Calculator. Happy Calculating
+          </h1>
         </header>
-        <Buttons clear={() => this.clear()} 
-        currentCalc={this.state.currentCalc}
-        addToScreenValue={this.addToScreenValue} 
-        screenValue={this.state.screenValue}
-        plus={() => this.plus()}
-        equals={()=> this.equals()}
-        
+        <Buttons
+          clear={() => this.clear()}
+          currentCalc={currentCalc}
+          addToScreenValue={this.addToScreenValue}
+          screenValue={this.state.screenValue}
+          appendOperator={e => this.appendOperator(e)}
+          equals={() => this.equals()}
         />
-        
       </div>
     );
   }
