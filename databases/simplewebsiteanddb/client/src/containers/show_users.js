@@ -11,19 +11,23 @@ export default class ShowUsers extends Component {
         this.getUsers();
     }
 
-    getUsers(){
-
-        axios('http://localhost:3000/users').then((res) => {
-            console.log(res);
-            const users = res;
-            this.setState({users});
+    async getUsers(){
+        try{
+        const { data } = await axios('http://localhost:3000/users');
+        console.log('users response is',data);
+        this.setState({
+          users:data
         });
+        }catch(e){
+            console.error("could not get users", e);
+        }
     }
+
     render(){
         return (<div>
             <h3>Users</h3>
             {this.state.users.map(u => {
-                <div>{u.name} {u.surname} {u.email}</div>
+                return <div>{u.name} {u.surname} {u.email}</div>
             })}
             </div>)
     }

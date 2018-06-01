@@ -5,7 +5,8 @@ console.log('the pg user is', process.env.PGUSER);
 const express = require('express')
 const app = express()
 const getUsers = require('./commands/get_users')
-const cors = require('cors');
+const saveUser = require('./commands/save-user')
+const cors = require('cors')
 
 app.use(cors());
 app.use(express.json());
@@ -16,12 +17,25 @@ app.get('/users', async (req, res) => {
     res.send(users);
     }
     catch(e){
+        console.log('Users get from db error',e);
         res.status(500).end();
     }
 });
 
-app.post('/users', (req, res) => {
-    console.log('user to add', req.body);
+app.post('/users', async (req, res) => {
+    try{
+        const {
+          name,
+          surname,
+          email
+        } = req.body;
+
+    await saveUser(name, surname, email);
+
+    }catch(e){
+        console.log('Users get from db error',e);
+        res.status(500).end();
+    }
 
     res.status(201).end();
 });

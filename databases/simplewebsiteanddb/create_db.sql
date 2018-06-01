@@ -4,8 +4,8 @@ CREATE TABLE books (
 );
 
 CREATE TABLE user_books (
-    userid integer NOT NULL,
-    bookid integer NOT NULL
+    userid integer NOT NULL REFERENCES users(id),
+    bookid integer NOT NULL REFERENCES books(id)
 );
 
 

@@ -1,23 +1,22 @@
-const { Client } = require('pg')
-
-const client = new Client()
+var getDbClient = require('./get-db-client')
 
 const getAllUsers = async () => {
-    const pool = new Pool()
+    const client = await getDbClient();
 
-    // await client.connect()
+    var users;
+    var error;
 
-    // const res = await client.query('SELECT name, surname, email from users order by created desc')
-    // var users = res.rows;
-    // await client.end()
-    // return users;
+    try {
+      const res = await client.query('SELECT name, surname, email from users order by created desc')
+      users = res.rows;
+    } catch (e) {
+      error = e;
+    } finally {
+      client.release();
+    }
+    if (error) throw error;
+    else return users;
 
-    await client.connect()
-
-    const res = await pool.query('SELECT name, surname, email from users order by created desc')
-    var users = res.rows;
-    await pool.end()
-    return users;
 }
 
 module.exports = getAllUsers;
