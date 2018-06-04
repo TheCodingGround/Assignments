@@ -1,72 +1,72 @@
- .textarea {
-            font-family: "Lucida Console", Monaco, monospace !important;
-            background-color: silver;
-            height: 70%;
-            text-align: right;
-            width: 410%;
-            padding-left: px;
-            border: 0.1px solid orange;
-            font-size: 130%;
-            border-radius: 25px;
-        }
+.textarea {
+    font-family: "Lucida Console", Monaco, monospace !important;
+    background-color: silver;
+    height: 70%;
+    text-align: right;
+    width: 410%;
+    padding-left: px;
+    border: 0.1px solid orange;
+    font-size: 130%;
+    border-radius: 25px;
+}
 
-        .six {
-            width: 87px;
-            height: 87px;
-            color: white;
-            font-size: 40px;
-            background-color: grey;
-            box-shadow: 0px 3px 0px 0px orange;
-            border: 1px solid orange;
-            border-radius: 40%;
-        }
+.six {
+    width: 87px;
+    height: 87px;
+    color: white;
+    font-size: 40px;
+    background-color: grey;
+    box-shadow: 0px 3px 0px 0px orange;
+    border: 1px solid orange;
+    border-radius: 40%;
+}
 
-        section {
-            padding-top: 3%;
-            background-color: dimgrey;
-            border: 5px double black;
-            border-radius: 8%;
-            margin: 50px;
-            width: 24%;
-            height: 31em;
-        }
+section {
+    padding-top: 3%;
+    background-color: dimgrey;
+    border: 5px double black;
+    border-radius: 8%;
+    margin: 50px;
+    width: 24%;
+    height: 31em;
+}
 
-        .cons {
-            box-shadow: 49px;
-            display: flex;
-            text-align: center;
-            padding-left: 42px;
-            flex-direction: row;
-        }
+.cons {
+    box-shadow: 49px;
+    display: flex;
+    text-align: center;
+    padding-left: 42px;
+    flex-direction: row;
+}
 
-        div {
+div {
+    font: serif;
+    font-size: 55px;
+    width: 100px;
+    height: 100px;
+    margin: 1px;
+}
 
-            font: serif;
-            font-size: 55px;
-            width: 100px;
-            height: 100px;
-            margin: 1px;
-        }
+.size {
+    background-color: orange;
+    opacity: 0.7;
+    width: 150px;
+    font-size: 54px;
+    box-shadow: 0px 3px 0px 0px #671c2a;
+    border-radius: 25%;
+    height: 90px;
+}
 
-        .size {
-            background-color: orange;
-            opacity: 0.7;
-            width: 150px;
-            font-size: 54px;
-            box-shadow: 0px 3px 0px 0px #671c2a;
-            border-radius: 25%;
-            height: 90px;
-        }
+.yellow {
+    opacity: 0.4;
+}
 
-        .yellow {
-            opacity: 0.4;
-        }
+h1 {
+    font-family: roboto;
+    font-size: 22px;
+    color: black;
+}
 
-        h1 {
-            font-family: roboto;
-            font-size: 22px;
-            color: black;
-        }
-        body{
-            background-color:lightsteelblue;
-        }
+body {
+    background-color: lightsteelblue;
+}

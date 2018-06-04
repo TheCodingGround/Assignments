@@ -1,8 +1,7 @@
         body {
-
-            background-image:url("https://images.unsplash.com/photo-1510936994138-07e06c7c5add?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=79c398c8a111d7a96c6df6de0c50094c&auto=format&fit=crop&w=1355&q=80");
+            background-image: url("https://images.unsplash.com/photo-1510936994138-07e06c7c5add?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=79c398c8a111d7a96c6df6de0c50094c&auto=format&fit=crop&w=1355&q=80");
             background-size: COVER;
-            background-repeat:no-repeat;
+            background-repeat: no-repeat;
         }
 
         .flox {
@@ -13,18 +12,19 @@
             flex: 9;
             justify-content: center;
         }
-.start{
-  display:flex;
-  flex-direction:row;
-  justify-content:center;
-  background-color:green;
-  opacity:0.4;
-  text-align;
-  
-  font-size:23px;
-  width:74px;
-  height:50px
-}
+
+        .start {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            background-color: green;
+            opacity: 0.4;
+            text-align;
+            font-size: 23px;
+            width: 74px;
+            height: 50px
+        }
+
         button {
             width: 350px;
             font-size: 100px;
@@ -37,14 +37,30 @@
         }
 
         .nab {
-            padding-top: 92px;
+            padding-top: 12px;
         }
-        h1{
-            text-align:center;
+
+        h1 {
+            text-align: center;
             font-size: 55px;
             font-size-adjust: 1em;
-            font-weight:100;
+            font-weight: 100;
             fill-opacity: 50%;
-            font-family:'Times New Roman', Times, serif;
-            color:bisque;
+            font-family: 'Times New Roman', Times, serif;
+            color: bisque;
+        }
+
+        .sel {
+            height: 63px;
+            background-color: grey;
+            border-radius: 34px;
+            font-size: 23px;
+            width: 63px;
+        }
+
+        .selections {
+            display: flex;
+            padding-top: 2px;
+            flex-direction: row;
+            justify-content: center;
         }
