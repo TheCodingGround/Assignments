@@ -37,9 +37,10 @@ describe("string-calculator", function () {
     });
 });
 describe("string-calculator", function () {
-    it("should escape non digit elements", function () {
+
+    it("should throw error if there are negative digits in the string", function () {
         //console.log(StringCal)
-        expect(stringCalculator("//-\n-23-2-2")).to.be.eql(27);
+        expect(() => stringCalculator("//-\n-23-2-2")).to.throw("negatives not allowed");
     });
 });
 describe("string-calculator", function () {
